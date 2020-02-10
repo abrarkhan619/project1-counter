@@ -3,7 +3,8 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    counter: 0
+    counter: 0,
+    error: ""
   }
 
   increment = () => {
@@ -13,7 +14,9 @@ class App extends React.Component {
   }
 
   decrement = () => {
-    if (this.state.counter >0) {
+    if (this.state.counter <= 0) {
+      alert("Cannot go below 0")  
+    } else {
       this.setState({
         counter: this.state.counter - 1
       });
